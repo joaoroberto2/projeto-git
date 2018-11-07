@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" 
+	xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Estoque Farmacia</title>
+	<h:outputStylesheet name="css/styleTemplateTamplate2.css" />
+</h:head>
+<h:body>
+	<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+	 
+	<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+	    <p:graphicImage name="/images/loading.gif" />
+	</p:dialog>
+	 <div class="wrapper">
+	 	<div class="box header">
+			<h1 >FarmaVida</h1>
+	 	</div>
+		<div class="box sidebar" style="text-align: center;">
+			<ui:insert name="menu">
+				<h1>Menu</h1>
+				<h:form>
+					
+					<h:commandLink value="Cadastro de Pessoas"
+						action="cadastropessoa3.xhtml" /> <br/>
+					<h:commandLink value="Cadastro de Pessoas"
+						action="cadastropessoa3.xhtml" /> <br/>
+					<h:commandLink value="Cadastro de Pessoas"
+						action="cadastropessoa.xhtml" /> <br/>
+						
+				</h:form>
+			</ui:insert>
+		</div>
+		<div class="box content">
+			<ui:insert name="corpo">
+				<h1>FarmaVida</h1>
+			</ui:insert>
+		</div>
+		<div class="box footer" style="text-align: center;">
+			<h:outputText value="2018 - UNITINS - Todos os direitos reservados." />
+		</div>
+	</div>
+	<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+     	<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
+</h:body>
+</html>
